@@ -16,9 +16,10 @@ function createGrid(dimension) {
 
 function doHover() {
   let gridItems = document.querySelectorAll(".grid-item");
+  let color = changeColor();
   for(let i=0; i < gridItems.length; i++) {
     gridItems[i].addEventListener("mouseover", () => {
-      gridItems[i].classList.add("class", "colored");
+      gridItems[i].style.backgroundColor = color;
     });
   }
 }
@@ -32,6 +33,13 @@ function reset() {
     userDimensions = Number(userDimensions);
     createGrid(userDimensions);
     doHover();
-    reset();
   });
+}
+
+function changeColor() {
+  var num = Math.round(0xffffff * Math.random());
+  var r = num >> 16;
+  var g = num >> 8 & 255;
+  var b = num & 255;
+  return 'rgb(' + r + ', ' + g + ', ' + b + ')';
 }
