@@ -1,3 +1,4 @@
+
 createGrid(16);
 doHover();
 reset();
@@ -21,11 +22,14 @@ function doHover() {
 }
 
 function reset() {
-    let reset = document.querySelector("#reset");
-    let gridItems = document.querySelectorAll(".grid-item");
-    for(let i=0; i < gridItems.length; i++) {
-      reset.addEventListener("click", () => {
-        gridItems[i].classList.remove("colored");
-      });
-    }
+  let reset = document.querySelector("#reset");
+  let container = document.querySelector(".container");
+  reset.addEventListener("click", () => {
+    container.innerHTML = "";
+    let userDimensions = prompt();
+    userDimensions = Number(userDimensions);
+    createGrid(userDimensions);
+    doHover();
+    reset();
+  });
 }
