@@ -8,3 +8,7 @@
 .grid-item {
   border: 1px solid black;
 }
+
+.colored {
+  background-color: black;
+}
