@@ -1,5 +1,6 @@
 createGrid(16);
 doHover();
+reset();
 
 function createGrid(dimension) {
   let container = document.querySelector(".container");
@@ -12,10 +13,19 @@ function createGrid(dimension) {
 
 function doHover() {
   let gridItems = document.querySelectorAll(".grid-item");
-  console.log(gridItems.length);
   for(let i=0; i < gridItems.length; i++) {
     gridItems[i].addEventListener("mouseover", () => {
-      gridItems[i].setAttribute("class", "colored");
+      gridItems[i].classList.add("class", "colored");
     });
   }
+}
+
+function reset() {
+    let reset = document.querySelector("#reset");
+    let gridItems = document.querySelectorAll(".grid-item");
+    for(let i=0; i < gridItems.length; i++) {
+      reset.addEventListener("click", () => {
+        gridItems[i].classList.remove("colored");
+      });
+    }
 }
