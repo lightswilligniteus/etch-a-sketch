@@ -2,8 +2,14 @@
   display: grid;
   height: 650px;
   width: 650px;
+  margin: 0 auto;
 }
 
 .grid-item {
   border: 1px solid black;
+}
+
+.center {
+  margin-left: 50%;
+  padding-bottom: 10px;
 }
